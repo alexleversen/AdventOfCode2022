@@ -13,10 +13,10 @@ public static class Program
             return;
         }
 
-        Run(args[0], args[1], args[2]);
+        Console.WriteLine(Run(args[0], args[1], args[2]));
     }
 
-    public static void Run(string dayArg, string partArg, string inputFile)
+    private static string Run(string dayArg, string partArg, string inputFile)
     {
         IPuzzleSolver? solver = null;
         var day = int.Parse(dayArg);
@@ -34,9 +34,9 @@ public static class Program
 
         if (solver is null)
         {
-            return;
+            return "";
         }
         var input = File.ReadAllLines(inputFile);
-        solver.Run(input);
+        return solver.Run(input);
     }
 }
