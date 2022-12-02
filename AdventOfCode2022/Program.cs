@@ -33,7 +33,16 @@ public static class Program
                 {
                     solver = new Day1Part2();
                 }
-
+                break;
+            case 2:
+                if (part == 1)
+                {
+                    solver = new Day2Part1();
+                }
+                else
+                {
+                    solver = new Day2Part2();
+                }
                 break;
         }
 
