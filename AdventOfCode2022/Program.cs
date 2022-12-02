@@ -29,6 +29,11 @@ public static class Program
                 {
                     solver = new Day1Part1();
                 }
+                else
+                {
+                    solver = new Day1Part2();
+                }
+
                 break;
         }
 
