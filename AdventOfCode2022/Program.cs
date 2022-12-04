@@ -7,21 +7,23 @@ public static class Program
 
     public static void Main(string[] args)
     {
-        if (args.Length != 2)
+        if (args.Length != 2 && args.Length != 3)
         {
-            Console.WriteLine("Usage: dotnet run <dayNumber> <partNumber>");
+            Console.WriteLine("Usage: dotnet run <dayNumber> <partNumber> (<fileName>, optional)");
             return;
         }
 
-        Console.WriteLine(Run(args[0], args[1]));
+        Console.WriteLine(Run(args));
     }
 
-    private static string Run(string dayArg, string partArg)
+    private static string Run(params string[] args)//string dayArg, string partArg)
     {
+        var dayArg = args[0];
+        var partArg = args[1];
         IPuzzleSolver? solver = null;
         var day = int.Parse(dayArg);
         var part = int.Parse(partArg);
-
+        var fileName = args.Length == 3 ? $"{args[2]}" : $"inputs/{day:D2}.txt";
         switch (day)
         {
             case 1:
@@ -54,6 +56,16 @@ public static class Program
                     solver = new Day3Part2();
                 }
                 break;
+            case 4:
+                if (part == 1)
+                {
+                    solver = new Day4Part1();
+                }
+                else
+                {
+                    solver = new Day4Part2();
+                }
+                break;
         }
 
         if (solver is null)
@@ -61,7 +73,7 @@ public static class Program
             return "";
         }
 
-        var input = File.ReadAllLines($"inputs/{day:D2}.txt");
+        var input = File.ReadAllLines(fileName);
         return solver.Run(input);
     }
 }
