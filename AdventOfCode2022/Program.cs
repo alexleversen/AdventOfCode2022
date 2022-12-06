@@ -76,6 +76,16 @@ public static class Program
                     solver = new Day5Part2();
                 }
                 break;
+            case 6:
+                if (part == 1)
+                {
+                    solver = new Day6Part1();
+                }
+                else
+                {
+                    solver = new Day6Part2();
+                }
+                break;
         }
 
         if (solver is null)
