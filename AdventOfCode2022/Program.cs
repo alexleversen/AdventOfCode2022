@@ -4,7 +4,6 @@ namespace AdventOfCode2022;
 
 public static class Program
 {
-
     public static void Main(string[] args)
     {
         if (args.Length != 2 && args.Length != 3)
@@ -84,6 +83,16 @@ public static class Program
                 else
                 {
                     solver = new Day6Part2();
+                }
+                break;
+            case 7:
+                if (part == 1)
+                {
+                    solver = new Day7Part1();
+                }
+                else
+                {
+                    solver = new Day7Part2();
                 }
                 break;
         }
