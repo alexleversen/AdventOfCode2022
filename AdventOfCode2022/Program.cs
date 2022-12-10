@@ -95,6 +95,16 @@ public static class Program
                     solver = new Day7Part2();
                 }
                 break;
+            case 8:
+                if (part == 1)
+                {
+                    solver = new Day8Part1();
+                }
+                else
+                {
+                    solver = new Day8Part2();
+                }
+                break;
         }
 
         if (solver is null)
