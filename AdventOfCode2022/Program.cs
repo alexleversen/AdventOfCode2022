@@ -110,6 +110,10 @@ public static class Program
                 {
                     solver = new Day9Part1();
                 }
+                else
+                {
+                    solver = new Day9Part2();
+                }
                 break;
         }
 
