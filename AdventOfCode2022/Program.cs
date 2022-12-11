@@ -115,6 +115,12 @@ public static class Program
                     solver = new Day9Part2();
                 }
                 break;
+            case 10:
+                if (part == 1)
+                {
+                    solver = new Day10Part1();
+                }
+                break;
         }
 
         if (solver is null)
