@@ -120,6 +120,10 @@ public static class Program
                 {
                     solver = new Day10Part1();
                 }
+                else
+                {
+                    solver = new Day10Part2();
+                }
                 break;
         }
 
