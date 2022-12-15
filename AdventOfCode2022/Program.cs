@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-namespace AdventOfCode2022;
+﻿namespace AdventOfCode2022;
 
 public static class Program
 {
@@ -123,6 +121,18 @@ public static class Program
                 else
                 {
                     solver = new Day10Part2();
+                }
+                break;
+            case 11:
+                if (part == 1)
+                {
+                    solver = new Day11Part1();
+                }
+                break;
+            case 14:
+                if (part == 1)
+                {
+                    solver = new Day14Part1();
                 }
                 break;
         }

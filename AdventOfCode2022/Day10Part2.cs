@@ -1,4 +1,3 @@
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode2022;
@@ -59,25 +58,9 @@ public class Day10Part2 : IPuzzleSolver
             cycle++;
         }
 
-        return ToString(screenChars);
+        return Extensions.ToString(screenChars);
     }
 
-    private static string ToString(IEnumerable<char[]> charGrid)
-    {
-        var sb = new StringBuilder();
-
-        foreach (var row in charGrid)
-        {
-            foreach (var c in row)
-            {
-                sb.Append(c);
-            }
-
-            sb.AppendLine();
-        }
-
-        return sb.ToString();
-    }
 
     private void ExecuteInstruction(string instruction, int? value)
     {
